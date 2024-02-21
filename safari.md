@@ -73,6 +73,9 @@ SELECT staff.name FROM staff INNER JOIN assignments ON staff.id = assignments.st
 
 ```
 - The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
+``` SQL
+SELECT enclosures.name FROM animals INNER JOIN enclosures ON animals.enclosure_id = enclosures.id ORDER BY animals.age DESC, animals.name ASC limit 1 ;
+```
 - The number of different animal types a given keeper has been assigned to work with.
 - The number of different keepers who have been assigned to work in a given enclosure
 - The names of the other animals sharing an enclosure with a given animal (eg. find the names of all the animals sharing the big cat field with Tony)
