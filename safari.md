@@ -81,6 +81,9 @@ Write queries to find:
    SELECT DISTINCT animals.type FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id INNER JOIN animals ON enclosures.id = animals.enclosure_id WHERE staff.name = 'Captain Rik';
 ```
 - The number of different keepers who have been assigned to work in a given enclosure
+```SQL
+   SELECT DISTINCT staff.name FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id WHERE enclosures.name = 'big cat field';
+```
 - The names of the other animals sharing an enclosure with a given animal (eg. find the names of all the animals sharing the big cat field with Tony)
 
 ## Hints
