@@ -42,8 +42,10 @@ INSERT INTO enclosures(name, capacity, closedForMaintenance) VALUES('birds',1, t
 
 INSERT INTO animals(name, type, age, enclosure_id) VALUES('Tony', 'Tiger', 59, 1);
 INSERT INTO animals(name, type, age, enclosure_id) VALUES('Simba', 'Lion', 10, 1);
+INSERT INTO animals(name, type, age, enclosure_id) VALUES('Mufasa', 'Lion', 80, 1);
 INSERT INTO animals(name, type, age, enclosure_id) VALUES('Rafiki', 'Monkey', 80, 2);
 INSERT INTO animals(name, type, age, enclosure_id) VALUES('Zazu', 'Bird', 44, 3);
+INSERT INTO animals(name, type, age, enclosure_id) VALUES('Iago', 'Bird', 32, 3);
 
 INSERT INTO assignments(staff_id, enclosure_id, day) VALUES(2,1, 'Monday');
 INSERT INTO assignments(staff_id, enclosure_id, day) VALUES(1,1,'Tuesday');
