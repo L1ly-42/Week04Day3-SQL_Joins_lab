@@ -69,14 +69,17 @@ Write queries to find:
 
 - The names of staff working in enclosures which are closed for maintenance
 ```SQL
-SELECT staff.name FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id WHERE enclosures.closedformaintenance = true;
+   SELECT staff.name FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id WHERE enclosures.closedformaintenance = true;
 
 ```
 - The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
 ``` SQL
-SELECT enclosures.name FROM animals INNER JOIN enclosures ON animals.enclosure_id = enclosures.id ORDER BY animals.age DESC, animals.name ASC limit 1 ;
+   SELECT enclosures.name FROM animals INNER JOIN enclosures ON animals.enclosure_id = enclosures.id ORDER BY animals.age DESC, animals.name ASC limit 1 ;
 ```
 - The number of different animal types a given keeper has been assigned to work with.
+```SQL
+   SELECT DISTINCT animals.type FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id INNER JOIN animals ON enclosures.id = animals.enclosure_id WHERE staff.name = 'Captain Rik';
+```
 - The number of different keepers who have been assigned to work in a given enclosure
 - The names of the other animals sharing an enclosure with a given animal (eg. find the names of all the animals sharing the big cat field with Tony)
 
