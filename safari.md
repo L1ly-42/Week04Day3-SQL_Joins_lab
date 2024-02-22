@@ -85,6 +85,17 @@ Write queries to find:
    SELECT DISTINCT staff.name FROM staff INNER JOIN assignments ON staff.id = assignments.staff_id INNER JOIN enclosures ON assignments.enclosure_id = enclosures.id WHERE enclosures.name = 'big cat field';
 ```
 - The names of the other animals sharing an enclosure with a given animal (eg. find the names of all the animals sharing the big cat field with Tony)
+```SQL
+   -- Here is the solution given by Colin(BNTA trainer). It looks like they functionally wanted the same information as in the first query but wanted me to play around with aliases via the AS keyword.
+
+   SELECT roommates.name FROM animals
+   INNER JOIN enclosures
+   ON animals.enclosure_id = enclosures.id
+   INNER JOIN animals AS roommates
+   ON enclosures.id = roommates.enclosure_id
+   WHERE animals.id = 1;
+
+```
 
 ## Hints
 
